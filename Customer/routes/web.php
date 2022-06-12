@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\CustomerController;
 use App\Http\Controllers\Auth;
 
 /*
@@ -20,6 +21,9 @@ Route::get('/', function () {
 
 Route::get('login', [AuthController::class, 'index'])->name('login');
 Route::post('post-login', [AuthController::class, 'postLogin'])->name('login.post'); 
+Route::get('/customer/all',[CustomerController::class,'list'])->name('customer.list');
+Route::get('/customer/registration',[CustomerController::class,'registration'])->name('customer.registration');
+Route::post('/customer/registration',[CustomerController::class,'registrationSubmit'])->name('customer.registration.submit');
 
 
 Route::post("user",[Auth::class,'userLogin']);
@@ -50,6 +54,6 @@ Route::get('/logout', function () {
     {
         session()->pull('user');
     }
-    return view('login');
+    return redirect('login');
 });
 

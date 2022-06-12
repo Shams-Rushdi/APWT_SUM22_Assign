@@ -1,21 +1,24 @@
+
 @extends('layouts.main')
+
 @section('content')
+<h4>Hello,{{session('user')}}</h4>
+
 <table border="1">
     <tr>
         <th>Id</th>
         <th>Name</th>
-        <th>Date Of Birth</th>
         <th>Email</th>
-        <th>Phone</th>
+        <th>Type</th>
+        
         
     </tr>
-    @foreach($students as $st)
+    @foreach($customers as $st)
         <tr>
-            <td>{{$st->st_id}}</td>
-            <td><a href="{{route('student.details',['id'=>$st->id])}}">{{$st->name}}</a></td>
-            <td>{{$st->dob}}</td>
-            <td>{{$st->email}}</td>
-            <td>{{$st->phone}}</td>
+            <td>{{$st->id}}</td>
+            <td>{{$st->name}}</td>
+            <td>{{$st->email}}</td> 
+            <td>{{$st->type}}</td>
         </tr>
     @endforeach
 </table>

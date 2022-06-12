@@ -13,7 +13,7 @@ class Auth extends Controller
         $data = $req->input();
         $req->session()->put('user',$data['user']);
         //echo session('user');
-        return redirect('dashboard');
+        return redirect('customer/all');
     }
    
 

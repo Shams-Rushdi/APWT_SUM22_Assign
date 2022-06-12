@@ -5,7 +5,9 @@
 <input type="text" name="user" placeholder="Enter User Name"><br><br>
 <input type="password" name="password" placeholder="Enter Password"><br><br>
 <button type="submit"> Login</button>
+<br>
+<br>
 
-<a href="/registration">Logout</a>
 
+<a href="/customer/registration">Registration</a>
 </form>
